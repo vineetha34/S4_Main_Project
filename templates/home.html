@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/homestyle.css') }}">
+<style>
+    .resultsec{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .butto{
+        height: 40px;
+        width: 200px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="maincontainer">
+        <div class="headings">
+            <h1>Tuberculosis Detection</h1>
+        </div>
+        <form class="ip" action="/home" method="post" enctype=multipart/form-data>
+            <input type="file" class="ip" name="file" />
+            <button type="Submit" value="upload" class="butto">Submit</button>
+        </form>
+        <div class="resultsec">
+            <h2>The result is: {{result}}</h2>
+            <p>The description is: {{description}}</p>
+
+        </div>
+
+        </div>
+    
+</body>
+</html>
